@@ -18,9 +18,11 @@ public class UserTest extends TestCase {
         user.setName("zhangsan");
         user.setAge(16);
         user.setGender("male");
-        logger.info(user.getName());
-        logger.error(user.toString());
-        logger.warn(user.toString());
+        for(int i=0;i<10000;i++){
+            logger.info(user.getName());
+            logger.error(user.toString());
+            logger.warn(user.toString());
+        }
 
     }
 
@@ -32,10 +34,12 @@ public class UserTest extends TestCase {
         user.setGender("male");
         assertEquals("zhangsan",user.getName());
         assertTrue("zhangsan".equals(user.getName()));
-        flogger.error(user.getName());
-        flogger.info(user.toString());
-        flogger.debug(user.toString());
-        flogger.warn(user.toString());
+        for(int i=0;i<100000;i++){
+            flogger.error(user.getName());
+            flogger.info(user.toString());
+            flogger.debug(user.toString());
+            flogger.warn(user.toString());
+        }
     }
 
 }
