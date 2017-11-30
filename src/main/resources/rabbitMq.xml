@@ -32,10 +32,10 @@
 
 
     <!-- 消息接收者 -->
-    <bean id="messageReceiver" class="com.ideal.rabbitmq.producerTest.MessageConsumer"></bean>
+    <bean id="messageReceiver" class="com.ideal.test.rabbitmq.messageTest.MessageConsumer"></bean>
 
     <!--消息生產者-->
-    <bean id="messageProducer" class="com.ideal.rabbitmq.producerTest.MessageProducer"></bean>
+    <bean id="messageProducer" class="com.ideal.test.rabbitmq.messageTest.MessageProducer"></bean>
 
     <!-- queue litener  观察 监听模式 当有消息到达时会通知监听在对应的队列上的监听对象-->
     <rabbit:listener-container connection-factory="connectionFactory">
@@ -70,8 +70,8 @@
         <rabbit:listener ref="topic1" queues="topicQueue"/>
     </rabbit:listener-container>
 
-    <bean id="topic1" class="com.ideal.rabbitmq.producerTest.TopicConsumer"/>
-    <bean id="topicProducer" class="com.ideal.rabbitmq.producerTest.TopicProducer"/>
+    <bean id="topic1" class="com.ideal.test.rabbitmq.topicTest.TopicConsumer"/>
+    <bean id="topicProducer" class="com.ideal.test.rabbitmq.topicTest.TopicProducer"/>
 
 
 
@@ -102,8 +102,8 @@
         <rabbit:listener ref="fanoutConsumer2" method="foo" queues="fanoutQueue2"/>
     </rabbit:listener-container>
 
-    <bean id="fanoutProducer" class="com.ideal.rabbitmq.producerTest.FanoutProducer"/>
-    <bean id="fanoutConsumer" class="com.ideal.rabbitmq.producerTest.FanoutConsumer"/>
-    <bean id="fanoutConsumer2" class="com.ideal.rabbitmq.producerTest.FanoutConsumer2"/>
+    <bean id="fanoutProducer" class="com.ideal.test.rabbitmq.fanoutTest.FanoutProducer"/>
+    <bean id="fanoutConsumer" class="com.ideal.test.rabbitmq.fanoutTest.FanoutConsumer"/>
+    <bean id="fanoutConsumer2" class="com.ideal.test.rabbitmq.fanoutTest.FanoutConsumer2"/>
 
 </beans>
