@@ -2,6 +2,12 @@ package com.ideal.test.json2java;
 
 import java.util.Map;
 
+/**
+ * json中student对应entity
+ * @author  lzz
+ * @date    2017/12/26
+ * @version 1.0
+ */
 public class Student {
     private String name;
     private int age;
@@ -10,6 +16,10 @@ public class Student {
     private float weight;
     private Map<String,Integer> score;
 
+    /**
+     *
+     * @return name
+     */
     public String getName() {
         return name;
     }

@@ -1,7 +1,12 @@
 package com.ideal.test.json2java;
 
 import java.util.List;
-
+/**
+ * 将json中Grade转化为entity
+ * @author  lzz
+ * @date    2017/12/26
+ * @version 1.0
+ */
 public class Grade {
     private String name;
 
