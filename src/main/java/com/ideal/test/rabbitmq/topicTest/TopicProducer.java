@@ -26,6 +26,6 @@ public class TopicProducer {
         logger.info("to send message:{}",message);
         AbstractApplicationContext ctx = new ClassPathXmlApplicationContext("application.xml");
         topicTemplate = (AmqpTemplate) ctx.getBean("topicTemplate");
-        topicTemplate.convertAndSend("info.debug",message);
+        topicTemplate.convertAndSend("info.info",message);
     }
 }

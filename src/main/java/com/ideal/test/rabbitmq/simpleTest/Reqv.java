@@ -11,7 +11,7 @@ import com.rabbitmq.client.QueueingConsumer;
  * @Description 接收端
  */
 public class Reqv {
-    private final static String QUEUE_NAME = "hello";
+    private final static String QUEUE_NAME = "fanoutQueue4";
 
     public static void main(String[] argv) throws Exception {
 
@@ -20,7 +20,7 @@ public class Reqv {
         Connection connection = factory.newConnection();
         Channel channel = connection.createChannel();
 
-        channel.queueDeclare(QUEUE_NAME, false, false, false, null);
+        channel.queueDeclare(QUEUE_NAME, true, false, false, null);
         System.out.println(" [*] Waiting for messages. To exit press CTRL+C");
 
         QueueingConsumer consumer = new QueueingConsumer(channel);
